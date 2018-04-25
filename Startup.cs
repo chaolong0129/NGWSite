@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using NGWSite.Models;
 
 namespace NGWSite
 {
@@ -23,6 +25,8 @@ namespace NGWSite
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            var conn = @"Server=./SQLEXPRESS;Database=NGWSiteDb;Integrated Security=SSPI";
+            services.AddDbContext<MyDbContext>(options => options.UseSqlServer(conn));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

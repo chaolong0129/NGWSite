@@ -8,7 +8,7 @@ namespace NGWSite.Models
        [Required]
        public Product Product {get;set;}
        [Required]
-       public int Quality {get;set;}
+       public int Quantity {get;set;}
        public int ProductId {get;set;}
 
     }

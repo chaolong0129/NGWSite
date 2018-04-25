@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using NGWSite.Models;
 
 namespace NGWSite.Controllers {
+    [Route("api/[controller]")]
     public class ProductsController : Controller {
         private readonly MyDbContext context;
 

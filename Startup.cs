@@ -25,7 +25,7 @@ namespace NGWSite
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            var conn = @"Server=./SQLEXPRESS;Database=NGWSiteDb;Integrated Security=SSPI";
+            var conn = @"Server=.\SQLEXPRESS;Database=NGWSiteDb;Integrated Security=SSPI";
             services.AddDbContext<MyDbContext>(options => options.UseSqlServer(conn));
         }
 

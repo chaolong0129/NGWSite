@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -9,8 +9,9 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
-import { OrderComponent } from './components/order/order.component';
 import { ProductComponent } from './components/product/product.component';
+import { OrderComponent } from './components/order/order.component';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -18,23 +19,21 @@ import { ProductComponent } from './components/product/product.component';
         CounterComponent,
         FetchDataComponent,
         HomeComponent,
-        OrderComponent,
-        ProductComponent
+        ProductComponent,
+        OrderComponent
     ],
     imports: [
         CommonModule,
         HttpModule,
         FormsModule,
         ReactiveFormsModule,
-        FormBuilder,
-        FormGroup,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'order', component: OrderComponent },
             { path: 'product', component: ProductComponent },
+            { path: 'order', component: OrderComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]

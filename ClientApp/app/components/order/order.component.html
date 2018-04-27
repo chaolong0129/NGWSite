@@ -3,8 +3,8 @@
     <div class="form-group">
         <label for="product">Product</label>
         <select id="product" class="form-control" formControlName="product">
-            <option value="1">Product 1</option>
-            <option value="2">Product 2</option>
+            <option value="0"></option>
+            <option *ngFor="let p of products" value="{{p.productId}}">{{p.name}}</option>
         </select>
     </div>
     <div class="form-group">
@@ -24,8 +24,8 @@
         <th>Product</th>
         <th>Quantity</th>
     </tr>
-    <tr *ngFor="let m of orderItemList">
-        <td>{{m.product}}</td>
+    <tr *ngFor="let m of addedProducts">
+        <td>{{m.name}}</td>
         <td>{{m.quantity}}</td>
     </tr>
 </table>

@@ -11,6 +11,8 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { ProductComponent } from './components/product/product.component';
 import { OrderComponent } from './components/order/order.component';
+import { OrderService } from './components/services/order.service';
+import { ProductService } from './components/services/product.service';
 
 @NgModule({
     declarations: [
@@ -36,7 +38,8 @@ import { OrderComponent } from './components/order/order.component';
             { path: 'order', component: OrderComponent },
             { path: '**', redirectTo: 'home' }
         ])
-    ]
+    ],
+    providers: [OrderService, ProductService]
 })
 export class AppModuleShared {
 }

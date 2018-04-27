@@ -49,7 +49,7 @@ export class OrderComponent implements OnInit {
     }
 
     save() {
-
+        this.orderService.saveOrders(this.finalOrder).subscribe(s => {console.log(s)});
     }
 
     private populateOrderItem(selectedOrderItem : SelectedOrderItem) {

@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NGWSite.Models;
@@ -20,8 +21,14 @@ namespace NGWSite.Controllers {
         }
 
         [HttpPost]
-        public IActionResult SaveOrders([FromBody] Order order)
+        public IActionResult SaveOrders([FromBody] FinalOrder finalOrder)
         {
+            Order order = new Order();
+            order.OrderItems = finalOrder.SelectedOrderItem;
+            order.TotalPrice = finalOrder.TotalPrice;
+            var d = DateTime.Now.ToString("yyyy-MM-dd");
+            order.Date = DateTime.Parse(d);
+
             context.Orders.Add(order);
             var result = context.SaveChanges();
             return Accepted(result);

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace NGWSite.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class InitialDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,8 @@ namespace NGWSite.Migrations
                 {
                     OrderId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Date = table.Column<DateTime>(nullable: false)
+                    Date = table.Column<DateTime>(nullable: false),
+                    TotalPrice = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -84,7 +85,7 @@ namespace NGWSite.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     OrderId = table.Column<int>(nullable: true),
                     ProductId = table.Column<int>(nullable: false),
-                    Quality = table.Column<int>(nullable: false)
+                    Quantity = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

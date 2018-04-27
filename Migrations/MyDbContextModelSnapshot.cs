@@ -27,6 +27,8 @@ namespace NGWSite.Migrations
 
                     b.Property<DateTime>("Date");
 
+                    b.Property<decimal>("TotalPrice");
+
                     b.HasKey("OrderId");
 
                     b.ToTable("Orders");
@@ -41,7 +43,7 @@ namespace NGWSite.Migrations
 
                     b.Property<int>("ProductId");
 
-                    b.Property<int>("Quality");
+                    b.Property<int>("Quantity");
 
                     b.HasKey("OrderItemId");
 

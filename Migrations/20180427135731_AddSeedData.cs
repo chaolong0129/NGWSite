@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace NGWSite.Migrations {
-    public partial class SeedDataBase : Migration {
+    public partial class AddSeedData : Migration {
         protected override void Up (MigrationBuilder migrationBuilder) {
             migrationBuilder.Sql ("INSERT INTO ProductCategorys(Name) VALUES ('Breakfast')");
             migrationBuilder.Sql ("INSERT INTO ProductCategorys(Name) VALUES ('Lunch')");
@@ -26,7 +26,6 @@ namespace NGWSite.Migrations {
             migrationBuilder.Sql ("INSERT INTO OrderItems(OrderId, ProductId, Quantity) VALUES((SELECT OrderId FROM Orders WHERE Date='2013-01-01'), (SELECT ProductId FROM Products WHERE Name='Donut'), 4)");
             migrationBuilder.Sql ("INSERT INTO OrderItems(OrderId, ProductId, Quantity) VALUES((SELECT OrderId FROM Orders WHERE Date='2012-12-31'), (SELECT ProductId FROM Products WHERE Name='Cappuccino'), 2)");
             migrationBuilder.Sql ("INSERT INTO OrderItems(OrderId, ProductId, Quantity) VALUES((SELECT OrderId FROM Orders WHERE Date='2013-01-01'), (SELECT ProductId FROM Products WHERE Name='Ice Tea'), 1)");
-
         }
 
         protected override void Down (MigrationBuilder migrationBuilder) {
@@ -49,7 +48,6 @@ namespace NGWSite.Migrations {
 
             migrationBuilder.Sql ("DELETE FROM OrderItems WHERE OrderId=(SELECT OrderId FROM Orders WHERE Date='2012-12-31')");
             migrationBuilder.Sql ("DELETE FROM OrderItems WHERE OrderId=(SELECT OrderId FROM Orders WHERE Date='2013-01-01')");
-
         }
     }
 }

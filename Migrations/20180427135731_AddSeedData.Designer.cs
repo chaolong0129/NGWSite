@@ -11,8 +11,8 @@ using System;
 namespace NGWSite.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20180425091901_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20180427135731_AddSeedData")]
+    partial class AddSeedData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,6 +28,8 @@ namespace NGWSite.Migrations
 
                     b.Property<DateTime>("Date");
 
+                    b.Property<decimal>("TotalPrice");
+
                     b.HasKey("OrderId");
 
                     b.ToTable("Orders");
@@ -42,7 +44,7 @@ namespace NGWSite.Migrations
 
                     b.Property<int>("ProductId");
 
-                    b.Property<int>("Quality");
+                    b.Property<int>("Quantity");
 
                     b.HasKey("OrderItemId");
 

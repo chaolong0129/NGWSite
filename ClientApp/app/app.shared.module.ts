@@ -27,8 +27,9 @@ import { ReportComponent } from './components/report/report.component';
         ReactiveFormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'order', pathMatch: 'full' },
-            { path: 'product', component: ProductComponent },
             { path: 'order', component: OrderComponent },
+            { path: 'product', component: ProductComponent },
+            { path: 'report', component: ReportComponent },
             { path: '**', redirectTo: 'order' }
         ])
     ],
